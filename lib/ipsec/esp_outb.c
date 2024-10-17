@@ -290,7 +290,7 @@ outb_pkt_xprepare(const struct rte_ipsec_sa *sa, rte_be64_t sqc,
  */
 static inline uint16_t
 esp_outb_tun_prepare_helper(const struct rte_ipsec_session *ss, struct rte_mbuf *mb[],
-	struct rte_crypto_op *cop[], uint16_t n, uint64_t sqn)
+	struct rte_crypto_op *cop[], uint32_t n, uint64_t sqn)
 {
 	int32_t rc;
 	uint32_t i, k;
@@ -549,7 +549,7 @@ outb_cpu_crypto_prepare(const struct rte_ipsec_sa *sa, uint32_t *pofs,
 
 static inline uint16_t
 cpu_outb_pkt_prepare_helper(const struct rte_ipsec_session *ss,
-		struct rte_mbuf *mb[], uint16_t n, esp_outb_prepare_t prepare,
+		struct rte_mbuf *mb[], uint32_t n, esp_outb_prepare_t prepare,
 		uint32_t cofs_mask,	uint64_t sqn)
 {
 	int32_t rc;
